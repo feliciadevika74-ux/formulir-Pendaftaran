@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pendaftaran Akun Baru</title>
+</head>
+<body>
+    <h2>Formulir Pendaftaran Akun</h2>
+    <form action="proses-daftar.php" method="POST">
+        <div>
+            <label for="nama">Nama Lengkap:</label><br>
+            <input type="text" id="nama" name="nama" required>
+        </div>
+        <br>
+        <div>
+            <label for="email">Alamat Email:</label><br>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <br>
+        <div>
+            <label for="password">Kata Sandi:</label><br>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <br>
+        <button type="submit">Daftar</button>
+    </form>
+</body>
+</html>
+
+
+
+<label for="input-nama-komentar">
+                    Nama
+                </label>
+
+                <input
+                    type="text"
+                    id="input-nama-komentar"
+                    placeholder="Nama Anda"
+                    required
+                >
+
+
+                <label for="input-pesan">
+                    Komentar
+                </label>
+
+                <textarea
+                    id="input-pesan"
+                    placeholder="Tulis komentar..."
+                    required
+                ></textarea>
+
+
+                <p id="pesan-error"></p>
+
+
+                <button type="submit">
+                    Kirim Komentar
+                </button>
+
+            </form>
+
+
+            <div class="komentar-hasil">
+
+                <h3>
+                    Komentar
+                </h3>
+
+                <ul id="daftar-komentar"></ul>
+
+                <button
+    id="btn-hapus-semua"
+    type="button"
+>
+    Hapus Semua Komentar
+</button>

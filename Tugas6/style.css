@@ -1,0 +1,402 @@
+
+/* =========================================================
+   MODUL 6 — FORMULIR PENDAFTARAN MAHASISWA BARU
+   File: style.css
+   ========================================================= */
+
+/* Reset dan pengaturan dasar */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f3f5f7;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+  text-align: center;
+  background: #174a8b;
+  color: white;
+  padding: 25px 15px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+header h2 {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+header p {
+  margin: 0;
+}
+
+/* =========================================================
+   KONTEN UTAMA DAN FORMULIR
+   ========================================================= */
+
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+section h2 {
+  color: #174a8b;
+  border-left: 5px solid #174a8b;
+  padding-left: 10px;
+}
+
+/* =========================================================
+   LABEL DAN INPUT
+   ========================================================= */
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #bbb;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: inherit;
+  background-color: white;
+  color: #222;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* =========================================================
+   VALIDASI VISUAL
+   ========================================================= */
+
+/* Input yang sudah diisi dan valid */
+input:not(:placeholder-shown):valid,
+textarea:not(:placeholder-shown):valid {
+  border-color: #5cb85c;
+}
+
+/* Input yang sudah diisi tetapi tidak valid */
+input:not(:placeholder-shown):invalid,
+textarea:not(:placeholder-shown):invalid {
+  border-color: #d9534f;
+}
+
+/* Select yang tidak valid */
+select:invalid {
+  border-color: #d9534f;
+}
+
+/* Tampilan ketika input sedang dipilih */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #174a8b;
+  box-shadow: 0 0 0 2px rgba(23, 74, 139, 0.12);
+}
+
+/* Input yang ditandai tidak valid oleh JavaScript */
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: #d9534f;
+  box-shadow: 0 0 0 1px rgba(217, 83, 79, 0.12);
+}
+
+/* =========================================================
+   RADIO BUTTON DAN CHECKBOX
+   ========================================================= */
+
+.radio,
+.checkbox {
+  display: inline-block;
+  font-weight: normal;
+  margin-right: 20px;
+}
+
+.radio input,
+.checkbox input {
+  width: auto;
+  margin-right: 5px;
+  accent-color: #174a8b;
+}
+
+/* Keterangan tambahan pada formulir */
+.keterangan-form {
+  margin: 4px 0 8px 24px;
+}
+
+/* Dokumen pendukung pengajuan DPP */
+.dokumen-dpp {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 16px 24px;
+}
+
+.dokumen-dpp .checkbox {
+  margin: 0;
+}
+
+/* =========================================================
+   KONTRIBUSI BEASISWA DAN AKREDITASI
+   ========================================================= */
+
+.kontribusi-beasiswa {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.kontribusi-beasiswa input[type="number"] {
+  width: 150px;
+  max-width: 100%;
+}
+
+.status-akreditasi {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nilai-akreditasi {
+  width: 90px;
+}
+
+/* =========================================================
+   DATA SEKOLAH
+   ========================================================= */
+
+.data-sekolah-grid {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.data-sekolah-row {
+  display: grid;
+  grid-template-columns: minmax(190px, 1fr) 2fr;
+  align-items: center;
+  gap: 8px 14px;
+}
+
+.data-sekolah-row label,
+.alamat-sekolah label {
+  margin-bottom: 0;
+}
+
+.data-sekolah-row .pesan-error {
+  grid-column: 2;
+}
+
+.alamat-sekolah {
+  display: grid;
+  grid-template-columns: minmax(140px, 190px) 1fr;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+/* =========================================================
+   FIELDSET
+   ========================================================= */
+
+fieldset.form-group {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+fieldset legend {
+  padding: 0 6px;
+  font-weight: bold;
+}
+
+/* =========================================================
+   LAYOUT DUA KOLOM
+   ========================================================= */
+
+.dua-kolom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* =========================================================
+   PESAN ERROR
+   ========================================================= */
+
+.pesan-error {
+  display: block;
+  min-height: 20px;
+  color: #d9534f;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+/* =========================================================
+   TOMBOL
+   ========================================================= */
+
+.tombol {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: inherit;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+button[type="submit"] {
+  background: #174a8b;
+  color: white;
+}
+
+button[type="reset"] {
+  background: #777;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+button:focus-visible {
+  outline: 2px solid #174a8b;
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   PESAN SUKSES
+   ========================================================= */
+
+#pesan-sukses {
+  margin-top: 20px;
+  padding: 12px;
+  color: #155724;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  display: none;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET DAN PONSEL
+   ========================================================= */
+
+@media (max-width: 600px) {
+  main {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  header h2 {
+    font-size: 17px;
+  }
+
+  .dua-kolom {
+    grid-template-columns: 1fr;
+  }
+
+  .data-sekolah-row,
+  .alamat-sekolah {
+    grid-template-columns: 1fr;
+  }
+
+  .data-sekolah-row .pesan-error {
+    grid-column: 1;
+  }
+
+  .kontribusi-beasiswa,
+  .status-akreditasi {
+    align-items: flex-start;
+  }
+
+  .kontribusi-beasiswa input[type="number"] {
+    max-width: 100%;
+  }
+
+  .tombol {
+    flex-direction: column;
+  }
+
+  .tombol button {
+    width: 100%;
+  }
+
+  .radio,
+  .checkbox {
+    margin-right: 12px;
+  }
+}
+

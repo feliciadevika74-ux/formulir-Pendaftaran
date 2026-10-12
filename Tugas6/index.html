@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Pendaftaran Mahasiswa Baru</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>FORMULIR PENDAFTARAN MAHASISWA BARU</h1>
+    <h2>UNIVERSITAS SANATA DHARMA YOGYAKARTA</h2>
+    <p>Jalur Reguler</p>
+  </header>
+
+  <main>
+    <form id="form-pendaftaran" novalidate>
+
+      <!-- A. DATA CALON MAHASISWA -->
+      <section>
+        <h2>A. Data Calon Mahasiswa</h2>
+
+        <div class="form-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama"
+                 placeholder="Masukkan nama lengkap"
+                 required minlength="3" maxlength="50">
+          <span class="pesan-error" id="error-nama"></span>
+        </div>
+
+        <div class="form-group">
+          <span class="label" id="label-jenisKelamin">Jenis Kelamin</span>
+          <label class="radio">
+            <input type="radio" name="jenisKelamin" value="Laki-laki"
+                   aria-labelledby="label-jenisKelamin" required>
+            Laki-laki
+          </label>
+          <label class="radio">
+            <input type="radio" name="jenisKelamin" value="Perempuan"
+                   aria-labelledby="label-jenisKelamin">
+            Perempuan
+          </label>
+          <span class="pesan-error" id="error-jenisKelamin"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select id="status" name="status" required>
+            <option value="">-- Pilih Status --</option>
+            <option value="Belum Menikah">Belum Menikah</option>
+            <option value="Menikah">Menikah</option>
+            <option value="Biarawan/Biarawati">Biarawan/Biarawati</option>
+          </select>
+          <span class="pesan-error" id="error-status"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="agama">Agama</label>
+          <select id="agama" name="agama" required>
+            <option value="">-- Pilih Agama --</option>
+            <option value="Islam">Islam</option>
+            <option value="Katolik">Katolik</option>
+            <option value="Kristen">Kristen</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Buddha">Buddha</option>
+            <option value="Konghucu">Konghucu</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+          <span class="pesan-error" id="error-agama"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="kewarganegaraan">Kewarganegaraan</label>
+          <select id="kewarganegaraan" name="kewarganegaraan" required>
+            <option value="">-- Pilih --</option>
+            <option value="WNI">WNI</option>
+            <option value="WNA">WNA</option>
+          </select>
+          <span class="pesan-error" id="error-kewarganegaraan"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="alamat">Alamat Lengkap</label>
+          <textarea id="alamat" name="alamat"
+                    placeholder="Masukkan alamat lengkap"
+                    required minlength="10" maxlength="200"></textarea>
+          <span class="pesan-error" id="error-alamat"></span>
+        </div>
+
+        <div class="dua-kolom">
+          <div class="form-group">
+            <label for="kabupaten">Kabupaten/Kota</label>
+            <input type="text" id="kabupaten" name="kabupaten"
+                   required minlength="3">
+            <span class="pesan-error" id="error-kabupaten"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="provinsi">Provinsi</label>
+            <input type="text" id="provinsi" name="provinsi"
+                   required minlength="3">
+            <span class="pesan-error" id="error-provinsi"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="telepon">No. Telepon/HP</label>
+          <input type="tel" id="telepon" name="telepon"
+                 placeholder="Contoh: 081234567890"
+                 inputmode="numeric" pattern="[0-9]{10,13}" required>
+          <span class="pesan-error" id="error-telepon"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Alamat Email</label>
+          <input type="email" id="email" name="email"
+                 placeholder="nama@email.com" required>
+          <span class="pesan-error" id="error-email"></span>
+        </div>
+      </section>
+
+      <!-- B. DATA ORANG TUA / WALI -->
+      <section>
+        <h2>B. Data Orang Tua/Wali</h2>
+
+        <div class="form-group">
+          <label for="namaOrtu">Nama Orang Tua/Wali</label>
+          <input type="text" id="namaOrtu" name="namaOrtu"
+                 required minlength="3" maxlength="50">
+          <span class="pesan-error" id="error-namaOrtu"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="hpOrtu">No. HP Orang Tua/Wali</label>
+          <input type="tel" id="hpOrtu" name="hpOrtu"
+                 inputmode="numeric" pattern="[0-9]{10,13}" required>
+          <span class="pesan-error" id="error-hpOrtu"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="pendidikanOrtu">Pendidikan Terakhir</label>
+          <select id="pendidikanOrtu" name="pendidikanOrtu" required>
+            <option value="">-- Pilih Pendidikan --</option>
+            <option value="SD">SD</option>
+            <option value="SLTP">SLTP</option>
+            <option value="SMA/SMK">SMA/SMK</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Sarjana">Sarjana</option>
+            <option value="Magister">Magister</option>
+            <option value="Doktor">Doktor</option>
+          </select>
+          <span class="pesan-error" id="error-pendidikanOrtu"></span>
+        </div>
+      </section>
+
+      <!-- C. MAHASISWA TRANSFER -->
+      <section>
+        <h2>C. Untuk Mahasiswa Transfer</h2>
+
+        <div class="form-group">
+          <label for="asalPerguruanTinggi">Asal Perguruan Tinggi</label>
+          <input type="text" id="asalPerguruanTinggi"
+                 name="asalPerguruanTinggi"
+                 placeholder="Nama perguruan tinggi asal">
+        </div>
+
+        <div class="form-group">
+          <label for="asalProgramStudi">Asal Program Studi</label>
+          <input type="text" id="asalProgramStudi"
+                 name="asalProgramStudi"
+                 placeholder="Nama program studi asal">
+        </div>
+
+        <div class="form-group">
+          <span class="label" id="label-akreditasi">Status Akreditasi</span>
+          <div class="status-akreditasi">
+            <label class="radio">
+              <input type="radio" name="statusAkreditasi"
+                     value="Terakreditasi"
+                     aria-labelledby="label-akreditasi">
+              Terakreditasi dengan nilai
+            </label>
+
+            <input type="text" id="nilaiAkreditasi"
+                   name="nilaiAkreditasi"
+                   aria-label="Nilai akreditasi"
+                   placeholder="Nilai" class="nilai-akreditasi">
+
+            <label class="radio">
+              <input type="radio" name="statusAkreditasi"
+                     value="Belum Terakreditasi"
+                     aria-labelledby="label-akreditasi">
+              Belum Terakreditasi
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- D. PROGRAM STUDI -->
+      <section>
+        <h2>D. Program Studi yang Dipilih</h2>
+
+        <div class="form-group">
+          <label for="pilihan1">Pilihan Program Studi I</label>
+          <select id="pilihan1" name="pilihan1" required>
+            <option value="">-- Pilih Program Studi --</option>
+            <option value="Informatika">Informatika</option>
+            <option value="Manajemen">Manajemen</option>
+            <option value="Akuntansi">Akuntansi</option>
+            <option value="Psikologi">Psikologi</option>
+            <option value="Pendidikan Matematika">Pendidikan Matematika</option>
+            <option value="Pendidikan Bahasa Inggris">Pendidikan Bahasa Inggris</option>
+            <option value="Teknik Elektro">Teknik Elektro</option>
+            <option value="Farmasi">Farmasi</option>
+          </select>
+          <span class="pesan-error" id="error-pilihan1"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="pilihan2">Pilihan Program Studi II</label>
+          <select id="pilihan2" name="pilihan2">
+            <option value="">-- Tidak Ada --</option>
+            <option value="Informatika">Informatika</option>
+            <option value="Manajemen">Manajemen</option>
+            <option value="Akuntansi">Akuntansi</option>
+            <option value="Psikologi">Psikologi</option>
+            <option value="Pendidikan Matematika">Pendidikan Matematika</option>
+            <option value="Pendidikan Bahasa Inggris">Pendidikan Bahasa Inggris</option>
+            <option value="Teknik Elektro">Teknik Elektro</option>
+            <option value="Farmasi">Farmasi</option>
+          </select>
+          <span class="pesan-error" id="error-pilihan2"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="pilihan3">Pilihan Program Studi III</label>
+          <select id="pilihan3" name="pilihan3">
+            <option value="">-- Tidak Ada --</option>
+            <option value="Informatika">Informatika</option>
+            <option value="Manajemen">Manajemen</option>
+            <option value="Akuntansi">Akuntansi</option>
+            <option value="Psikologi">Psikologi</option>
+            <option value="Pendidikan Matematika">Pendidikan Matematika</option>
+            <option value="Pendidikan Bahasa Inggris">Pendidikan Bahasa Inggris</option>
+            <option value="Teknik Elektro">Teknik Elektro</option>
+            <option value="Farmasi">Farmasi</option>
+          </select>
+          <span class="pesan-error" id="error-pilihan3"></span>
+        </div>
+      </section>
+
+      <!-- E. DATA SEKOLAH -->
+      <section>
+        <h2>E. Data SMA/SMK/SMF/MAN</h2>
+
+        <div class="dua-kolom">
+          <div class="form-group">
+            <label for="sekolah">1. Nama Sekolah Menengah</label>
+            <input type="text" id="sekolah" name="sekolah"
+                   placeholder="Masukkan nama sekolah"
+                   minlength="3" maxlength="100" required>
+            <span class="pesan-error" id="error-sekolah"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="teleponSekolah">2. Telepon</label>
+            <input type="tel" id="teleponSekolah" name="teleponSekolah"
+                   placeholder="Contoh: 0274321234" inputmode="tel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <span class="label" id="label-alamatSekolah">3. Alamat Sekolah</span>
+
+          <div class="form-group">
+            <label for="alamatSekolah">Alamat</label>
+            <input type="text" id="alamatSekolah" name="alamatSekolah"
+                   placeholder="Masukkan alamat sekolah">
+          </div>
+
+          <div class="dua-kolom">
+            <div class="form-group">
+              <label for="kabupatenSekolah">Kabupaten/Kota</label>
+              <input type="text" id="kabupatenSekolah"
+                     name="kabupatenSekolah" placeholder="Kabupaten/Kota">
+            </div>
+
+            <div class="form-group">
+              <label for="provinsiSekolah">Provinsi</label>
+              <input type="text" id="provinsiSekolah"
+                     name="provinsiSekolah" placeholder="Provinsi">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="tahunLulus">
+            4. Bagi yang Sudah Lulus/Memiliki Ijazah — STTB Tahun
+          </label>
+          <input type="number" id="tahunLulus" name="tahunLulus"
+                 min="2000" max="2026" step="1"
+                 placeholder="Contoh: 2025">
+          <span class="pesan-error" id="error-tahunLulus"></span>
+        </div>
+
+        <div class="form-group">
+          <h3>5. Data NEM/STK/SKHUN</h3>
+
+          <div class="dua-kolom">
+            <div class="form-group">
+              <label for="tahunNem">a. Tahun</label>
+              <input type="number" id="tahunNem" name="tahunNem"
+                     min="2000" max="2026" step="1"
+                     placeholder="Tahun">
+            </div>
+
+            <div class="form-group">
+              <label for="jumlahNilai">b. Jumlah Nilai</label>
+              <input type="number" id="jumlahNilai" name="jumlahNilai"
+                     min="0" step="any" placeholder="Jumlah nilai">
+            </div>
+
+            <div class="form-group">
+              <label for="jumlahMataPelajaran">
+                c. Jumlah Mata Pelajaran
+              </label>
+              <input type="number" id="jumlahMataPelajaran"
+                     name="jumlahMataPelajaran"
+                     min="0" step="1"
+                     placeholder="Jumlah mata pelajaran">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3>6. Jurusan</h3>
+
+          <div class="dua-kolom">
+            <div class="form-group">
+              <label for="jurusanSekolah">Pilihan Jurusan</label>
+              <select id="jurusanSekolah" name="jurusanSekolah">
+                <option value="">-- Pilih Jurusan --</option>
+                <option value="SMA IPA">SMA IPA</option>
+                <option value="SMA IPS">SMA IPS</option>
+                <option value="SMA Bahasa">SMA Bahasa</option>
+                <option value="SMK Ekonomi">SMK Ekonomi</option>
+                <option value="SMK Teknik">SMK Teknik</option>
+                <option value="SMK Ketrampilan">SMK Ketrampilan</option>
+                <option value="SMF">SMF</option>
+                <option value="Lain-lain">Lain-lain</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="statusSekolah">Status Sekolah</label>
+              <select id="statusSekolah" name="statusSekolah">
+                <option value="">-- Pilih Status --</option>
+                <option value="Negeri">Negeri</option>
+                <option value="Swasta">Swasta</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Bagian E selesai -->
+
+      <!-- F. PERMOHONAN KERINGANAN DPP -->
+      <section>
+        <h2>F. Permohonan Keringanan DPP</h2>
+
+        <label class="checkbox">
+          <input type="radio" name="permohonanDpp" value="Mengajukan">
+          Saya mengajukan permohonan keringanan DPP
+          (Dana Pengembangan Pendidikan).
+        </label>
+
+        <p class="keterangan-form">
+          Kelengkapan dokumen yang saya sertakan:
+        </p>
+
+        <div class="dokumen-dpp">
+          <label class="checkbox">
+            <input type="checkbox" name="dokumenDpp[]"
+                   value="Penghasilan orang tua">
+            a. Daftar gaji Ayah dan Ibu atau surat keterangan penghasilan
+            Ayah dan Ibu yang disahkan Ketua RT
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" name="dokumenDpp[]"
+                   value="Rekening listrik dan telepon">
+            b. Bukti rekening listrik dan telepon
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" name="dokumenDpp[]"
+                   value="Surat keterangan tidak mampu">
+            c. Surat keterangan tidak mampu dari Ketua RT
+          </label>
+        </div>
+
+        <label class="checkbox">
+          <input type="radio" name="permohonanDpp"
+                 value="Tidak Mengajukan">
+          Saya tidak mengajukan permohonan keringanan DPP.
+        </label>
+      </section>
+
+      <!-- G. PARTISIPASI BEASISWA -->
+      <section>
+        <h2>G. Partisipasi Program Beasiswa Universitas Sanata Dharma</h2>
+
+        <div class="form-group">
+          <label class="radio">
+            <input type="radio" name="partisipasiBeasiswa"
+                   value="Menyumbang">
+            Saya akan menyumbang dana ke USD untuk beasiswa.
+          </label>
+
+          <div class="kontribusi-beasiswa">
+            <label for="jumlahSumbangan">Jumlah sumbangan (Rp)</label>
+            <input type="number" id="jumlahSumbangan"
+                   name="jumlahSumbangan"
+                   min="0" step="any"
+                   aria-label="Jumlah sumbangan beasiswa"
+                   placeholder="Jumlah">
+          </div>
+        </div>
+
+        <label class="radio">
+          <input type="radio" name="partisipasiBeasiswa"
+                 value="Tidak Menyumbang">
+          Saya tidak akan menyumbang dana ke USD untuk beasiswa.
+        </label>
+      </section>
+
+      <!-- H. PERNYATAAN -->
+      <section>
+        <h2>H. Pernyataan</h2>
+
+        <label class="checkbox">
+          <input type="checkbox" id="persetujuan"
+                 name="persetujuan" required>
+          Saya menyatakan bahwa data yang saya isi adalah benar.
+        </label>
+
+        <span class="pesan-error" id="error-persetujuan"></span>
+      </section>
+
+      <!-- TOMBOL -->
+      <div class="tombol">
+        <button type="submit">Daftar</button>
+        <button type="reset" id="btn-reset">Reset</button>
+      </div>
+
+      <div id="pesan-sukses" role="status" aria-live="polite"></div>
+
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Formulir Pendaftaran Mahasiswa Baru</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
